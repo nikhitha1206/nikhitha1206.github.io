@@ -1,40 +1,55 @@
 <html>
     <head>
         <link href="styles.css" rel="stylesheet"/>
+       <style>
+        #info{
+            color:white;
+            font-size: 30px;
+            text-align: center;
+            font-style: italic;
+        }
+        p{
+            color: red;
+        }
+    
+        </style>
+        <script src="validation.js">
+        </script>
     </head>
-    <body background="images/wall.jpg">
+    <body background="images/wall5.jpg" style="background-position: center;">
         <header>
         <h1>iPhone</h1>
         <nav class="menu">
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html">ABout</a>
             <a href="contact.html">Contact</a>
             <a href="gallery.html">Gallery</a>
+            <a href="admin.html">Admin</a>
         </nav>
         </header>
         <br><br>
+        <p id="info"></p>
         <div id="contact">
             <h1>CONTACT DETAILS</h1>
             <div class="table">
              <table align="center">
                  <tr>
                      <td>Name:</td>
-                     <td>Thangella Nikhitha</td>
+                     <td><input type="text" placeholder="Enter Name" id="name" onblur="validateName(this.value)"></td>
+                     <td><p id="Message1"></p></td>
                  </tr>
                  <tr>
                     <td>EMail:</td>
-                    <td>thangellanikhitha@gmail.com</td>
+                    <td><input type="email" placeholder="Enter EMail" id="email" onblur="validateEmail(this.value)"></td>
+                    <td><p id="Message2"></p></td>
                 </tr>
                 <tr>
-                    <td>Mobile Number:</td>
-                    <td>9848022338</td>
+                    <td>Message description:</td>
+                    <td><textarea rows=5 cols=25 id="msg" onblur="validateMessage(this.value)"></textarea></td>
+                    <td><p id="Message3"></p></td>
                 </tr>
-                <tr>
-                    <td>Address:</td>
-                    <td>kukatpally,Hyderabad,Telangana</td>
-                </tr>
-
              </table>
+             <input type="button" value="submit" onclick=validate()>
              </div>  
         </div>
        
